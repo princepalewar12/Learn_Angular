@@ -1,0 +1,13 @@
+<!-- Interpolation -->
+<p>welcome to {{hotelName}}</p>
+<h3>No. of rooms:</h3>
+
+<!-- Property Binding -->
+<div [innerText]="numberOfRooms"></div>
+<!-- document.getElementById('numberOfRooms').innerText = numberOfRooms -->
+<div [hidden]="hideRooms">
+    <h1>Hello Prince!</h1>
+</div>
+
+<!-- Event Binding -->
+<button (click)="toggle()">Toggle</button>
