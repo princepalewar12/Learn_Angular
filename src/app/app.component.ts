@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'learn_angular';
+
+  role = "users";//this variable used in a ngSwitch case in app.component.html
 }

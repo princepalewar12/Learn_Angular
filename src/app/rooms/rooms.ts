@@ -1,4 +1,3 @@
-import { Data } from "@angular/router";
 
 export interface Room {
     totalRooms: number;
@@ -12,6 +11,6 @@ export interface RoomList {
     amenities: string;
     price: number;
     photos: string;
-    checkinTime: Data;
+    checkinTime: Date;
     checkoutTime: Date;
 }
