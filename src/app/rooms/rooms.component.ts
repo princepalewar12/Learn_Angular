@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Room, RoomList } from './rooms';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
@@ -48,8 +48,12 @@ export class RoomsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    $(document).on('click', function () {
+      $("#button").toggle()
+    })
   }
   toggle() {
     this.hideRooms = !this.hideRooms
   }
+
 }

@@ -1,0 +1,49 @@
+<!-- create Form -->
+<div class="container" *ngIf="toggleCreate">
+    <form [formGroup]="form">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="exampleInputName"
+                aria-describedby="nameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Number</label>
+            <input type="text" class="form-control" formControlName="number" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="postData()">Create</button>
+        <button type="submit" class="btn btn-primary ms-2" (click)=" getData()">Read</button>
+    </form>
+</div>
+<!-- Read and Update Form -->
+<div class="container" *ngIf="toggleRead">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Number</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.number}}</td>
+                <td><i class="fa-solid fa-trash me-5" (click)="deleteData(item.id)"></i><i class="fa-solid fa-user-pen"></i></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary ms-2" (click)="backFunction()"><i class="fa-solid fa-backward me-2" ></i>Back</button>
+
+</div>
