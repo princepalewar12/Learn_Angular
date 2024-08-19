@@ -9,6 +9,8 @@ import { CrudComponent } from './crud/crud.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RoomsListComponent } from './rooms/rooms-list/rooms-list.component';
 
 
 @NgModule({
@@ -17,14 +19,16 @@ import { HttpClientModule } from "@angular/common/http";
     RoomsComponent,
     AuthenticationComponent,
     CrudComponent,
-    NavbarComponent
+    NavbarComponent,
+    RoomsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

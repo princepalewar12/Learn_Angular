@@ -12,37 +12,14 @@
 <!-- {{rooms?.availableRooms?? 'no Rooms'}} -->
 <!-- [ngStyle] -->
 <div [ngStyle]="{'background-color':rooms.availableRooms? 'yellow': 'green'}" [innerHTML]="numberOfRooms"></div>
-{{roomList}}
+
+
+<!-- json Pipe -->
+<!-- {{roomList| json}} -->
+
 <!-- ngIf and ngFor -->
 <div *ngIf="rooms.availableRooms > 17">
-    <h2>Rooms List:</h2>
-    <table>
-        <tr>
-            <th>NO.</th>
-            <th>Even/Odd</th>
-            <th>Room Number</th>
-            <th>Room Type</th>
-            <th>Amenities</th>
-            <th>Price</th>
-            <th>Photo</th>
-            <th>check In</th>
-            <th>check Out</th>
-            <th>Rating</th>
-        </tr>
-        <tr [ngClass]="e?'test':'odd'"
-            *ngFor="let room of roomList | slice: 0:4; let i = index; let e = even; let o = odd">
-            <td>{{i + 1 | percent}}</td>
-            <td>{{e?'Even':'odd'}}</td>
-            <td>{{room.roomNumber}}</td>
-            <td>{{room.roomType}}</td>
-            <td>{{room.amenities | titlecase}}</td>
-            <td>{{room.price | currency:'GBP'}}</td>
-            <td>{{room.photos}}</td>
-            <td>{{room.checkinTime}}</td>
-            <td>{{room.checkoutTime | date:'shortDate'}}</td>
-            <td>{{room.rating | number: '1.1-3'}}</td>
-        </tr>
-    </table>
+    <app-rooms-list [rooms]="roomList"></app-rooms-list>
 </div>
 <!-- Event Binding -->
 <button (click)="toggle()">Toggle</button>
